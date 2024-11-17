@@ -4,10 +4,10 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/budka-tech/proxino"
 	"io"
 	"math/rand"
 	"net/http"
-	"proxino"
 	"time"
 )
 
