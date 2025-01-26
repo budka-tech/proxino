@@ -16,6 +16,7 @@ type ProxyMarket struct {
 	token   string
 	pool    map[string]*proxino.Proxy
 	List    []*http.Client
+	Proxies []*proxino.Proxy
 }
 
 func NewProxyMarket(token string) *ProxyMarket {
@@ -73,6 +74,7 @@ func (receiver *ProxyMarket) GetList() {
 			cli := proxino.NewClient(proxy)
 			receiver.pool[url] = proxy
 			receiver.List = append(receiver.List, cli)
+			receiver.Proxies = append(receiver.Proxies, proxy)
 		}
 	}
 }
